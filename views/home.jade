@@ -1,0 +1,79 @@
+extends layout
+
+block content
+	body#page-top.index
+		nav.navbar.navbar-default.navbar-fixed-top
+			div.container
+				div.navbar-header.page-scroll
+					button.navbar-toggle(data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
+						span.sr-only
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand(href="#page-top") i1
+				div.collapse.navbar-collapse
+					ul.nav.navbar-nav.navbar-right
+						li.hidden
+							a(href="#page-top")
+						li.page-scroll
+						li.page-scroll
+							a(href="#projeto") Projeto
+						li.page-scroll
+							a(href="#contato") Contato
+						li.page-scroll
+							a(href="#entrar") Entrar
+
+		header
+			div.container
+				div.row
+					div.col-lg-12
+						img.img-responsive(src="i" alt="")
+					div.into-text
+						span.name Jardim Inteligente
+							hr.star-light
+							
+
+		section#projeto.success
+			div.container
+				div.row
+					div.col-lg-12.text-center
+						h2 Projeto
+				div.row
+					div.text-center
+						p O Projeto i1 consiste em um Sistema de Gerenciamento Inteligente de um jardim residencial. Seu funcionamento se baseia na comunicação de um conjunto de dispositivos sensores de solo e microcontrolador com um servidor web capaz de identificar a necessidade de regar o jardim em conformidade com as especificações das plantas existentes comparadas com a umidade atual do solo. A inteligência so Sistema se extende à consulta da condição climática atual e sua previsão para o restante do dia. O conjunto de dados adquiridos através das coletas no solo, previsão do clima e consumo de água utilizada para regar o jardim serão armazenadas, a fim de produzir relatórios consistentes do consumo.
+						
+					div.col-lg-4.col-lg-offset-2
+						img.img-responsive(src="img/projeto1.jpg")
+					div.col-lg-4
+						img.img-responsive(src="img/projeto2.jpg")
+		
+		footer.text-center
+			div.footer-above
+				div.container
+					divc.row
+						div.footer-col.col-md-4
+							h3 Informação
+							p O modelo trazia informçãoes de localização
+						div.footer-col.col-md-4
+							h3 Pela web
+							ul.list-inline
+								li
+									a.btn-social.btn-outline(href="#")
+									i.fa.fa-fw.fa-facebook
+								li
+									a.btn-social.btn-outline(href="#")
+									i.fa.fa-fw.fa-google
+								li
+									a.btn-social.btn-outline(href="#")
+									i.fa.fa-fw.fa-linkedin
+								li
+									a.btn-social.btn-outline(href="#")
+									i.fa.fa-fw.fa-twitter
+						div.footer-col.col-md-4
+							h3 Sobre Jardim Inteligente
+							p Informações adicionais sobre o projeto
+			div.footer-below
+				div.container
+					div.row
+						div.col-lg-12
+							Copyright &copy; i1

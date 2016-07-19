@@ -4,11 +4,7 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="./css/bootstrap.min.css" />
   <link rel="stylesheet" href="./css/bootstrap-theme.min.css"/>
-  <script src="./js/jquery.js"></script>
-  <script src="./js/bootstrap.min.js"></script>
-  <script src="./js/bootstrap.js"></script>
-
-
+  <link rel="stylesheet" href="./css/c3.css" type="text/css">
   <title>iOne Smart Garden</title>
 </head>
 <body>
@@ -40,5 +36,25 @@
   <div>
     Message: <%= message %>
   </div>
+
+  <div id="chart"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="./js/bootstrap.js"></script>
+  <script src="./js/d3.v3.min.js"></script>
+  <script src="./js/c3.min.js"></script>
+
+  <script>
+    console.log('chart');
+    var chart = c3.generate({
+    bindto: '#chart',
+    data: {
+      columns: [
+        ['data1', 30, 200, 100, 400, 150, 250],
+        ['data2', 50, 20, 10, 40, 15, 25]
+      ]
+    }
+});
+  </script>
 </body>
 </html>

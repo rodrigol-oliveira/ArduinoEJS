@@ -48,7 +48,17 @@ app.post('/entrar',function(req, res){
 		});
 
 app.get('/',function(req,res){
-	res.render('index', {message: 'variavel vinda do node.js'})
+	// depois de buscar os dados no banco:
+	var consumo = [];
+	var acionamento = [];
+	for(var i=0; i<6; i++) {
+		var _consumo = Math.ceil(Math.random()*200) + 25;
+		var _acionamento = Math.ceil(Math.random()*200) + 25;
+
+		consumo.push(_consumo);
+		acionamento.push(_acionamento);
+	}
+	res.render('index', {message: 'variavel vinda do node.js', consumo: consumo, acionamento: acionamento})
 	//res.sendFile('index.html');
 	//res.render('user_add')
   //It will find and locate index.html from View or Scripts

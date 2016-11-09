@@ -180,7 +180,7 @@ app.get('/viewRegistrar',function(req,res){
 });
 
 //Metodo requisita pagina de cadastro - ok
-
+app.get('/viewAlterarUsuario', userController.viewAlterarUsuario);
 /*
 app.get('/viewAlterarUsuario',function(req,res){
   if(!req.session.user || !req.session.user.nome || !req.session.user.id){
@@ -1309,45 +1309,11 @@ transporter.sendMail(mailOptions, function(error, info){
 };
 
 
-//loadWeather('3448439');
-
-/*
-function loadWeather(req, res, city) {
-  console.log('loadWeather', city)
-  var path = 'http://api.openweathermap.org/data/2.5/forecast/city?id=' + city + '&APPID=' + keyprevisao + '&units=metric';
-  console.log('path', path);
-  request(path, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      res.json(JSON.parse(body));
-      var resposta = JSON.parse(body);
-      //console.log(resposta.list);
-      //console.log(resposta.list.length);
-      console.log(resposta.list[0].main.temp_min);//
-      console.log(resposta.list[0].main.temp_max);
-      console.log(resposta.list[0].main.humidity);
-  }else{
-    console.log(error)
-  }
-});
-}
-*/
-
-//app.post('/registrar', previsaoController.previsao);
 app.post('/registrar', userController.registrar);
-app.get('/viewAlterarUsuario', userController.viewAlterarUsuario);
+
 app.post('/alterarUsuario',userController.alterarUsuario);
 app.get('/previsao', previsaoController.previsao);
 
-/*
-app.get('/previsao', function(req, res) {
-  console.log('previsao get');
-  var city = req.query.city;
-  if(typeof city == 'undefined') {
-    city = '3448439';
-  }
-  loadWeather(req, res, city);
-});
-*/
 
 
     //Chama Metodo de Conexão ao executar app

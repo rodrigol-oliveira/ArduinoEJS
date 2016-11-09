@@ -163,6 +163,7 @@ function SelectIdJardim(usuario){
 }
 
 
+
 //Pagina requisita pagina inicial - ok
 app.get('/',function(req,res){
   res.render('index', {message: ''});
@@ -1334,6 +1335,7 @@ function loadWeather(req, res, city) {
 //app.post('/registrar', previsaoController.previsao);
 app.post('/registrar', userController.registrar);
 app.get('/viewAlterarUsuario', userController.viewAlterarUsuario);
+app.post('/alterarUsuario',userController.alterarUsuario);
 app.get('/previsao', previsaoController.previsao);
 
 /*

@@ -9,6 +9,7 @@ module.exports = {
     _this.connection = connection;
     _this.bcrypt = bcrypt;
     _this.session = session;  
+    
   },
 
 
@@ -16,7 +17,7 @@ module.exports = {
     if(!req.session.user || !req.session.user.nome || !req.session.user.id){
       res.redirect('/viewIniciar');
     }else{
-      var id_usuario = req.session.user.id;
+    var id_usuario = req.session.user.id;  
       _this.connection.query('SELECT * from usuario where id=?;', [id_usuario], function(err, rows){
         if(err){
           console.log('erro select usuario viewAlterarUsuario');
@@ -28,6 +29,23 @@ module.exports = {
         }
       });
     }
+  },
+
+  alterarUsuario:function(req,res){
+
+    var nome = req.body.nome;
+    var sobrenome = req.body.sobrenome;
+    var id_usuario = req.session.user.id;
+    _this.connection.query('UPDATE usuario set nome = ?,sobrenome = ? ,genero ="m" where id = ?',
+     [nome,sobrenome, id_usuario], function(err, rows){
+    if(err){     
+
+      console.log('erro com atualizaçã cadastrado');
+      throw err;
+    }else{        
+          res.send("Cadastrado com sucesso");//senha inválida
+        }
+        });
   },
 
   registrar:function(req, res){
@@ -43,9 +61,5 @@ module.exports = {
       if(err) throw err;
     });
   res.render('iniciar');
-  },
-
-
-
-
+ }
 };
